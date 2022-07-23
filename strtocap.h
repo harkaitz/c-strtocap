@@ -3,6 +3,7 @@
 
 #include <ctype.h>
 
+static inline
 int tocap (int _c, unsigned char *_prev) {
     unsigned char prev = *_prev;
     *_prev = _c;
@@ -15,6 +16,7 @@ int tocap (int _c, unsigned char *_prev) {
     }
 }
 
+static inline
 char *strtocap(char *_s) {
     unsigned char prev = '\0';
     for (char *c = _s; *c; c++) {
@@ -23,6 +25,7 @@ char *strtocap(char *_s) {
     return _s;
 }
 
+static inline
 char *strtoupper(char *_s) {
     for (char *c = _s; *c; c++) {
         *c = toupper(*c);
@@ -30,6 +33,7 @@ char *strtoupper(char *_s) {
     return _s;
 }
 
+static inline
 char *strtolower(char *_s) {
     for (char *c = _s; *c; c++) {
         *c = tolower(*c);
