@@ -26,11 +26,9 @@ $(PROG_TOUPPER): tools/toupper.c strtocap.h
 	$(CC) -o $@ tools/toupper.c $(CFLAGS)
 
 ## -- license --
-ifneq ($(PREFIX),)
 install: install-license
 install-license: LICENSE
 	@echo 'I share/doc/c-strtocap/LICENSE'
 	@mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-strtocap
 	@cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-strtocap
-endif
 ## -- license --
