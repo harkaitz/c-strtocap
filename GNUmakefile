@@ -1,3 +1,5 @@
+PROJECT=c-strtocap
+VERSION=1.0.0
 DESTDIR         =
 PREFIX          =/usr/local
 CC              =gcc
@@ -28,3 +30,14 @@ install-license: LICENSE
 	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-strtocap
 	cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-strtocap
 ## -- license --
+## -- BLOCK:license --
+install: install-license
+install-license: 
+	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/$(PROJECT)
+	cp LICENSE README.md $(DESTDIR)$(PREFIX)/share/doc/$(PROJECT)
+update: update-license
+update-license:
+	ssnip README.md
+## -- BLOCK:license --
+## -- BLOCK:man --
+## -- BLOCK:man --
